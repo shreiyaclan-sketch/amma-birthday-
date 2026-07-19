@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Amma!</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts for Cute & Natural aesthetics -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #fdf6f0; /* Soft warm background */
+        }
+        .font-handwritten {
+            font-family: 'Caveat', cursive;
+        }
+        .font-serif-elegant {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Custom scrollbar for beautiful experience */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fdf6f0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e8c5af;
+            border-radius: 10px;
+        }
+        /* Heart Sparkle Animation */
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) scale(0.5) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh) scale(1.2) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        .floating-element {
+            position: fixed;
+            bottom: -50px;
+            pointer-events: none;
+            animation: floatUp 6s linear infinite;
+            z-index: 99;
+        }
+        /* Shimmer for Golden Gifts */
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        .shimmer-btn {
+            background: linear-gradient(90deg, #e9967a, #f4a460, #e9967a);
+            background-size: 200% auto;
+            animation: shimmer 3s linear infinite;
+        }
+    </style>
+</head>
+<body class="text-stone-800 overflow-x-hidden relative">
+
+    <!-- Ambient Floating Sparkles -->
+    <div id="floating-container"></div>
+
+    <!-- Background Music Controller (Hidden Audio Element + Cute Animated Vinyl/Flower Widget) -->
+    <div class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-white/80 backdrop-blur-md px-4 py-2.5 rounded-full shadow-lg border border-orange-100">
+        <button id="music-btn" class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 hover:bg-amber-200 transition-all focus:outline-none relative group" onclick="toggleMusic()">
+            <i data-lucide="music" class="w-5 h-5 animate-spin-slow"></i>
+            <!-- Music playing waves simulation -->
+            <span class="absolute -top-1 -right-1 flex h-3 w-3" id="music-indicator">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3 w-3 bg-rose-500"></span>
+            </span>
+        </button>
+        <div class="text-xs">
+            <p class="font-bold text-amber-900 leading-none">BGM Playing</p>
+            <p class="text-stone-500 text-[10px]">Happy Birthday soft piano</p>
+        </div>
+    </div>
+
+    <!-- Synthesized Birthday Audio -->
+    <audio id="bg-audio" loop>
+        <!-- Creative Commons Beautiful Acoustic Guitar & Soft Piano Instrumental Loop -->
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- HEADER / HERO SECTION -->
+    <header class="min-h-screen flex flex-col justify-between items-center text-center relative px-4 py-8 overflow-hidden bg-gradient-to-b from-[#fbf3eb] via-[#fdf6f0] to-[#fdf6f0]">
+        <!-- Top decorative floral line -->
+        <div class="w-full max-w-xl mx-auto flex justify-between items-center px-4 opacity-75">
+            <span class="text-amber-700 text-lg font-handwritten">🌸 Handcrafted with Love</span>
+            <span class="h-[1px] flex-grow mx-4 bg-orange-200"></span>
+            <span class="text-amber-700 text-lg font-handwritten">Born: 19 July 1963 ✨</span>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="my-auto max-w-3xl px-2 z-10 flex flex-col items-center">
+            <!-- Watercolor-style circular backdrop -->
+            <div class="relative w-72 h-72 md:w-80 md:h-80 mx-auto mb-6 rounded-full bg-gradient-to-tr from-amber-100 via-rose-100 to-orange-100 flex items-center justify-center shadow-inner">
+                <!-- Artist Palette SVG icon -->
+                <div class="absolute inset-0 flex items-center justify-center animate-pulse opacity-40">
+                    <svg viewBox="0 0 100 100" class="w-48 h-48 fill-amber-300">
+                        <path d="M15,50 C15,25 35,15 55,15 C75,15 85,30 85,50 C85,70 65,85 45,85 C25,85 15,70 15,50 Z" />
+                    </svg>
+                </div>
+                <!-- Interactive Canvas Frame -->
+                <div class="z-10 p-6 text-center transform rotate-1 transition hover:rotate-0 duration-500">
+                    <p class="font-serif-elegant italic text-stone-600 text-lg md:text-xl">To our favorite Art Enthusiast</p>
+                    <h1 class="text-5xl md:text-7xl font-serif-elegant font-extrabold text-orange-900 tracking-wide mt-2">Indra</h1>
+                    <p class="text-3xl md:text-4xl font-handwritten text-rose-600 font-bold tracking-wider mt-1">"Amma"</p>
+                    <div class="mt-4 inline-flex items-center gap-2 bg-white/80 px-4 py-1.5 rounded-full shadow-sm text-xs font-semibold text-stone-600 border border-amber-100">
+                        🎨 Paint, Clay, Love & Smile
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Age Counter & Greetings -->
+            <div class="bg-white/50 backdrop-blur-sm border border-orange-100 p-6 rounded-3xl shadow-sm max-w-xl mx-auto">
+                <h2 class="text-2xl md:text-3xl font-serif-elegant text-amber-950 font-bold">
+                    Happy 63rd Birthday, dearest Amma!
+                </h2>
+                <p class="text-stone-600 text-sm mt-2 leading-relaxed">
+                    Celebrating 63 beautiful years of creativity, warmth, and the most artistic heart we know. You turn everyday life into a masterpiece!
+                </p>
+                <!-- Quick Navigation Buttons -->
+                <div class="mt-6 flex flex-wrap gap-3 justify-center">
+                    <a href="#letter" class="px-5 py-2 rounded-full bg-amber-100 hover:bg-amber-200 text-amber-900 font-semibold text-sm transition-all flex items-center gap-1.5">
+                        <i data-lucide="heart" class="w-4 h-4 text-rose-500"></i> Read My Message
+                    </a>
+                    <a href="#camera-scene" class="px-5 py-2 rounded-full bg-rose-100 hover:bg-rose-200 text-rose-900 font-semibold text-sm transition-all flex items-center gap-1.5">
+                        <i data-lucide="camera" class="w-4 h-4 text-rose-600"></i> Smile for Camera
+                    </a>
+                    <a href="#game-section" class="px-5 py-2 rounded-full bg-orange-100 hover:bg-orange-200 text-orange-900 font-semibold text-sm transition-all flex items-center gap-1.5">
+                        <i data-lucide="gamepad-2" class="w-4 h-4 text-orange-600"></i> Play Amma's Candy Crush
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll down indicator -->
+        <div class="animate-bounce mt-4">
+            <span class="text-stone-400 text-xs uppercase tracking-widest font-semibold">Scroll down for the surprise</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 mx-auto text-amber-600 mt-1"></i>
+        </div>
+    </header>
+
+
+    <!-- SENSITIVE PERSONAL LETTER FROM GRANDCHILD -->
+    <section id="letter" class="py-16 px-4 bg-[#fbf6f0] relative">
+        <div class="max-w-2xl mx-auto bg-white border border-orange-100/70 p-8 md:p-12 rounded-[2rem] shadow-md relative overflow-hidden">
+            <!-- Watercolor corners decoration -->
+            <div class="absolute -top-12 -left-12 w-28 h-28 rounded-full bg-rose-100/60 filter blur-xl"></div>
+            <div class="absolute -bottom-12 -right-12 w-28 h-28 rounded-full bg-amber-100/60 filter blur-xl"></div>
+
+            <!-- Envelope Header -->
+            <div class="flex justify-between items-center border-b border-orange-100 pb-4 mb-6">
+                <div class="flex items-center gap-2">
+                    <span class="p-2 rounded-full bg-rose-50 text-rose-600"><i data-lucide="heart-handshake" class="w-5 h-5"></i></span>
+                    <span class="font-handwritten text-xl text-rose-700">Dear Amma,</span>
+                </div>
+                <div class="text-right">
+                    <span class="text-xs text-stone-400 font-serif-elegant italic">July 19, 2026</span>
+                </div>
+            </div>
+
+            <!-- Letter Body -->
+            <div class="space-y-4 text-stone-700 font-serif-elegant leading-relaxed text-base md:text-lg">
+                <p>
+                    From the very first brush stroke you ever showed me to the endless warmth in your hugs, you are the true definition of magic in my life.
+                </p>
+                <p>
+                    I call you <strong class="text-rose-600 font-handwritten text-2xl">Amma</strong> because you hold the warmth of an entire universe within you. Your appreciation for art, nature, and the smallest beautiful details around us has taught me how to look at the world with kindness and curiosity.
+                </p>
+                <p>
+                    On your <span class="bg-amber-100 px-2 py-0.5 rounded text-amber-950 font-bold">63rd Birthday</span>, I wanted to curate a cozy digital sketchbook filled with our love, sweet memories, and some little games to make you smile. 
+                </p>
+                <p>
+                    Thank you for being the color in our family palette. I love you to the moon, back, and all around the galaxies!
+                </p>
+            </div>
+
+            <!-- Letter Footer / Sign off -->
+            <div class="mt-8 pt-6 border-t border-orange-100 flex flex-col items-end">
+                <p class="font-handwritten text-2xl text-stone-600">With all my love and warm hugs,</p>
+                <p class="font-handwritten text-4xl text-rose-700 font-bold mt-1">Your Loving Grandchild ❤️</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CUSTOM MEME/IMAGE SCENE: "SMILE FOR THE CAMERA, AMMA!" -->
+    <section id="camera-scene" class="py-16 px-4 bg-gradient-to-b from-[#fdf6f0] to-[#fcf1e6]">
+        <div class="max-w-4xl mx-auto text-center">
+            <span class="text-xs tracking-widest text-amber-700 font-bold uppercase block mb-2">📸 Smile for the Camera</span>
+            <h2 class="text-3xl md:text-4xl font-serif-elegant font-bold text-stone-900 mb-4">"Amma, smile!"</h2>
+            <p class="text-stone-600 max-w-xl mx-auto text-sm md:text-base mb-8">
+                Do you remember this beautiful moment? Whenever the family is together, there are always those enthusiastic three taking photos, holding up their phones to capture your glowing smile!
+            </p>
+
+            <!-- Illustrated Interactive Scene Panel -->
+            <div class="bg-white p-6 md:p-8 rounded-[2rem] shadow-lg border border-amber-100 max-w-2xl mx-auto relative overflow-hidden">
+                <!-- SVG Illustrated Artwork representing the 3 people with phones taking a photo of Grandma -->
+                <div class="w-full h-64 md:h-80 bg-stone-50 rounded-2xl relative flex items-center justify-center overflow-hidden border border-orange-100/50 shadow-inner">
+                    
+                    <!-- Beautiful Forest / Nature Wallpaper backdrop for art feel -->
+                    <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=1000&auto=format&fit=crop');"></div>
+                    
+                    <!-- Left Character SVG (Photographer 1) -->
+                    <div class="absolute left-6 bottom-4 flex flex-col items-center animate-bounce" style="animation-duration: 2.5s;">
+                        <div class="w-16 h-28 bg-[#f5d0a9] rounded-t-full relative flex items-center justify-center border-2 border-stone-700 shadow-md">
+                            <!-- Blue Shirt -->
+                            <div class="absolute bottom-0 w-full h-12 bg-sky-400 rounded-b-md"></div>
+                            <!-- Phone in hand -->
+                            <div class="absolute -right-2 top-6 w-8 h-12 bg-stone-800 rounded-md border border-amber-300 flex items-center justify-center transform rotate-12">
+                                <div class="w-2 h-2 rounded-full bg-emerald-400"></div>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold text-stone-500 mt-1">📸 Click!</span>
+                    </div>
+
+                    <!-- Middle Character SVG (Photographer 2) -->
+                    <div class="absolute left-1/2 -translate-x-1/2 bottom-2 flex flex-col items-center z-10 animate-pulse">
+                        <div class="w-20 h-32 bg-[#e0ac69] rounded-t-full relative flex items-center justify-center border-2 border-stone-800 shadow-lg">
+                            <!-- Yellow Shirt -->
+                            <div class="absolute bottom-0 w-full h-16 bg-amber-400 rounded-b-md"></div>
+                            <!-- Centered Phone raised high -->
+                            <div class="absolute -top-8 w-10 h-16 bg-stone-900 rounded-lg border-2 border-amber-200 flex flex-col items-center justify-center shadow-md transform -rotate-6">
+                                <div class="w-1.5 h-1.5 rounded-full bg-rose-500 mb-1"></div>
+                                <span class="text-[8px] text-white">REC 🔴</span>
+                            </div>
+                        </div>
+                        <span class="text-xs font-black text-rose-600 mt-2">"Pose Amma!"</span>
+                    </div>
+
+                    <!-- Right Character SVG (Photographer 3) -->
+                    <div class="absolute right-6 bottom-4 flex flex-col items-center animate-bounce" style="animation-duration: 3s;">
+                        <div class="w-16 h-26 bg-[#f3c299] rounded-t-full relative flex items-center justify-center border-2 border-stone-700 shadow-md">
+                            <!-- Green Shirt -->
+                            <div class="absolute bottom-0 w-full h-10 bg-emerald-400 rounded-b-md"></div>
+                            <!-- Phone in hand -->
+                            <div class="absolute -left-2 top-8 w-8 h-12 bg-stone-800 rounded-md border border-amber-300 flex items-center justify-center transform -rotate-12">
+                                <div class="w-2 h-2 rounded-full bg-yellow-400"></div>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold text-stone-500 mt-1">✨ Perfect!</span>
+                    </div>
+
+                    <!-- Flash Burst Effect (Interactive Clickable) -->
+                    <button onclick="triggerFlash()" class="absolute top-12 bg-white/90 hover:bg-white text-orange-950 px-4 py-2 rounded-full shadow-md text-xs font-bold border border-orange-200 flex items-center gap-1.5 transition active:scale-95">
+                        <i data-lucide="sparkles" class="w-4 h-4 text-amber-500"></i> Tap to snap a family picture!
+                    </button>
+                </div>
+
+                <!-- Custom camera lens effect overlay inside JS -->
+                <div id="flash-overlay" class="absolute inset-0 bg-white opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center">
+                    <span class="text-4xl font-serif-elegant text-orange-900 font-bold">Say Cheese! 🧀</span>
+                </div>
+
+                <!-- Frame caption -->
+                <div class="mt-4 p-3 bg-stone-50 rounded-xl border border-dashed border-orange-200">
+                    <p class="text-sm font-handwritten text-lg text-amber-900 font-bold">
+                        "Look here, Amma! One, two, three... SMILE! 🌸"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- NATURAL & ARTISTIC FAMILY PHOTO GALLERY -->
+    <section class="py-16 px-4 bg-gradient-to-b from-[#fcf1e6] to-[#fdf6f0]">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="p-2.5 rounded-full bg-amber-50 text-amber-700 inline-block mb-2">
+                    <i data-lucide="palette" class="w-6 h-6"></i>
+                </span>
+                <h2 class="text-3xl md:text-4xl font-serif-elegant font-bold text-stone-900">Amma's Masterpiece Gallery</h2>
+                <p class="text-stone-600 max-w-lg mx-auto text-sm mt-2">
+                    Beautiful memories styled as hand-painted canvases on a cozy warm wall. Click any to enlarge!
+                </p>
+            </div>
+
+            <!-- Creative Gallery Wall Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Frame 1 -->
+                <div class="bg-white p-4 pb-8 rounded-xl shadow-md border border-stone-200/60 transform rotate-1 hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="openPhotoModal('IMG20211101134915.jpg', 'Amma spreading her colorful wings!')">
+                    <div class="overflow-hidden rounded bg-stone-100 aspect-square relative">
+                        <img src="IMG20211101134915.jpg" class="object-cover w-full h-full transition-transform hover:scale-110 duration-700" alt="Amma with colorful wings">
+                        <div class="absolute bottom-2 right-2 bg-stone-900/60 px-2 py-0.5 rounded text-[10px] text-white">Shuka Vana</div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="font-handwritten text-xl text-stone-800">Spreading colorful wings!</p>
+                        <p class="text-[11px] text-amber-700 mt-1 uppercase tracking-wider font-semibold">Vibrant Spirit</p>
+                    </div>
+                </div>
+
+                <!-- Frame 2 -->
+                <div class="bg-white p-4 pb-8 rounded-xl shadow-md border border-stone-200/60 transform -rotate-1 hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="openPhotoModal('IMG20221024085832.jpg', 'Family feasts and endless smiles')">
+                    <div class="overflow-hidden rounded bg-stone-100 aspect-square relative">
+                        <img src="IMG20221024085832.jpg" class="object-cover w-full h-full transition-transform hover:scale-110 duration-700" alt="Family dining table">
+                        <div class="absolute bottom-2 right-2 bg-stone-900/60 px-2 py-0.5 rounded text-[10px] text-white">Family Time</div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="font-handwritten text-xl text-stone-800">Feasts and endless smiles</p>
+                        <p class="text-[11px] text-amber-700 mt-1 uppercase tracking-wider font-semibold">Togetherness</p>
+                    </div>
+                </div>
+
+                <!-- Frame 3 -->
+                <div class="bg-white p-4 pb-8 rounded-xl shadow-md border border-stone-200/60 transform rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="openPhotoModal('IMG20220415115930.jpg', 'Exploring together, step by step')">
+                    <div class="overflow-hidden rounded bg-stone-100 aspect-square relative">
+                        <img src="IMG20220415115930.jpg" class="object-cover w-full h-full transition-transform hover:scale-110 duration-700" alt="Family trip on stairs">
+                        <div class="absolute bottom-2 right-2 bg-stone-900/60 px-2 py-0.5 rounded text-[10px] text-white">Adventures</div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="font-handwritten text-xl text-stone-800">Exploring step by step</p>
+                        <p class="text-[11px] text-amber-700 mt-1 uppercase tracking-wider font-semibold">Our Journeys</p>
+                    </div>
+                </div>
+
+                <!-- Frame 4 -->
+                <div class="bg-white p-4 pb-8 rounded-xl shadow-md border border-stone-200/60 transform -rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="openPhotoModal('IMG20220515182938.jpg', 'Movie dates with my favorite person')">
+                    <div class="overflow-hidden rounded bg-stone-100 aspect-square relative">
+                        <img src="IMG20220515182938.jpg" class="object-cover w-full h-full transition-transform hover:scale-110 duration-700" alt="Movie theater">
+                        <div class="absolute bottom-2 right-2 bg-stone-900/60 px-2 py-0.5 rounded text-[10px] text-white">Movie Time</div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="font-handwritten text-xl text-stone-800">Movie dates with Amma</p>
+                        <p class="text-[11px] text-amber-700 mt-1 uppercase tracking-wider font-semibold">Cinema Magic</p>
+                    </div>
+                </div>
+
+                <!-- Frame 5 -->
+                <div class="bg-white p-4 pb-8 rounded-xl shadow-md border border-stone-200/60 transform rotate-1 hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="openPhotoModal('IMG20211205184603.jpg', 'Art, history, and our lovely Amma')">
+                    <div class="overflow-hidden rounded bg-stone-100 aspect-square relative">
+                        <img src="IMG20211205184603.jpg" class="object-cover w-full h-full transition-transform hover:scale-110 duration-700" alt="Museum with large jug">
+                        <div class="absolute bottom-2 right-2 bg-stone-900/60 px-2 py-0.5 rounded text-[10px] text-white">Art Exhibition</div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="font-handwritten text-xl text-stone-800">Surrounded by masterpieces</p>
+                        <p class="text-[11px] text-amber-700 mt-1 uppercase tracking-wider font-semibold">Creative Outings</p>
+                    </div>
+                </div>
+
+                <!-- Frame 6 -->
+                <div class="bg-white p-4 pb-8 rounded-xl shadow-md border border-stone-200/60 transform -rotate-1 hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="openPhotoModal('IMG20211205190058.jpg', 'Gathering memories in magical places')">
+                    <div class="overflow-hidden rounded bg-stone-100 aspect-square relative">
+                        <img src="IMG20211205190058.jpg" class="object-cover w-full h-full transition-transform hover:scale-110 duration-700" alt="Group at museum">
+                        <div class="absolute bottom-2 right-2 bg-stone-900/60 px-2 py-0.5 rounded text-[10px] text-white">Museums</div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="font-handwritten text-xl text-stone-800">Magical family memories</p>
+                        <p class="text-[11px] text-amber-700 mt-1 uppercase tracking-wider font-semibold">Always Together</p>
+                    </div>
+                </div>
+
+                <!-- Frame 7 -->
+                <div class="bg-white p-4 pb-8 rounded-xl shadow-md border border-stone-200/60 transform rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="openPhotoModal('IMG20220416092010.jpg', 'Joyrides and travel diaries')">
+                    <div class="overflow-hidden rounded bg-stone-100 aspect-square relative">
+                        <img src="IMG20220416092010.jpg" class="object-cover w-full h-full transition-transform hover:scale-110 duration-700" alt="Bus travel selfie">
+                        <div class="absolute bottom-2 right-2 bg-stone-900/60 px-2 py-0.5 rounded text-[10px] text-white">On the Go</div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="font-handwritten text-xl text-stone-800">Joyrides and big smiles</p>
+                        <p class="text-[11px] text-amber-700 mt-1 uppercase tracking-wider font-semibold">Travel Diaries</p>
+                    </div>
+                </div>
+
+                <!-- Frame 8 -->
+                <div class="bg-white p-4 pb-8 rounded-xl shadow-md border border-stone-200/60 transform -rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="openPhotoModal('IMG20220414082504.jpg', 'Relaxing moments with the family')">
+                    <div class="overflow-hidden rounded bg-stone-100 aspect-square relative">
+                        <img src="IMG20220414082504.jpg" class="object-cover w-full h-full transition-transform hover:scale-110 duration-700" alt="Relaxing in lounge">
+                        <div class="absolute bottom-2 right-2 bg-stone-900/60 px-2 py-0.5 rounded text-[10px] text-white">Chilling</div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="font-handwritten text-xl text-stone-800">Relaxing moments caught on camera</p>
+                        <p class="text-[11px] text-amber-700 mt-1 uppercase tracking-wider font-semibold">Candid Moments</p>
+                    </div>
+                </div>
+
+                <!-- Frame 9 -->
+                <div class="bg-white p-4 pb-8 rounded-xl shadow-md border border-stone-200/60 transform rotate-1 hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="openPhotoModal('IMG20260714214344.jpg', 'Sweet selfies and cozy hugs')">
+                    <div class="overflow-hidden rounded bg-stone-100 aspect-square relative">
+                        <img src="IMG20260714214344.jpg" class="object-cover w-full h-full transition-transform hover:scale-110 duration-700" alt="Cozy selfie">
+                        <div class="absolute bottom-2 right-2 bg-stone-900/60 px-2 py-0.5 rounded text-[10px] text-white">Selfie Time</div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="font-handwritten text-xl text-stone-800">Sweet selfies & warm hugs</p>
+                        <p class="text-[11px] text-amber-700 mt-1 uppercase tracking-wider font-semibold">Grandchild Love</p>
+                    </div>
+                </div>
+
+                <!-- Frame 10 -->
+                <div class="bg-white p-4 pb-8 rounded-xl shadow-md border border-stone-200/60 transform -rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="openPhotoModal('IMG20210719180702.jpg', 'A beautiful walk down memory lane')">
+                    <div class="overflow-hidden rounded bg-stone-100 aspect-square relative">
+                        <img src="IMG20210719180702.jpg" class="object-cover w-full h-full transition-transform hover:scale-110 duration-700" alt="Vintage family portrait outdoor">
+                        <div class="absolute bottom-2 right-2 bg-stone-900/60 px-2 py-0.5 rounded text-[10px] text-white">Vintage Memories</div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="font-handwritten text-xl text-stone-800">A beautiful walk down memory lane</p>
+                        <p class="text-[11px] text-amber-700 mt-1 uppercase tracking-wider font-semibold">Family Roots</p>
+                    </div>
+                </div>
+
+                <!-- Frame 11 -->
+                <div class="bg-white p-4 pb-8 rounded-xl shadow-md border border-stone-200/60 transform rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="openPhotoModal('IMG20210719180528.jpg', 'Celebrations and colorful balloons from years ago')">
+                    <div class="overflow-hidden rounded bg-stone-100 aspect-square relative">
+                        <img src="IMG20210719180528.jpg" class="object-cover w-full h-full transition-transform hover:scale-110 duration-700" alt="Family celebration with balloons">
+                        <div class="absolute bottom-2 right-2 bg-stone-900/60 px-2 py-0.5 rounded text-[10px] text-white">Celebrations</div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="font-handwritten text-xl text-stone-800">Joyful days and balloons</p>
+                        <p class="text-[11px] text-amber-700 mt-1 uppercase tracking-wider font-semibold">Happy Times</p>
+                    </div>
+                </div>
+
+                <!-- Frame 12 -->
+                <div class="bg-white p-4 pb-8 rounded-xl shadow-md border border-stone-200/60 transform -rotate-1 hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="openPhotoModal('IMG20210719180316.jpg', 'The timeless elegance of Amma')">
+                    <div class="overflow-hidden rounded bg-stone-100 aspect-square relative">
+                        <img src="IMG20210719180316.jpg" class="object-cover w-full h-full transition-transform hover:scale-110 duration-700" alt="Vintage portrait of young Amma in saree">
+                        <div class="absolute bottom-2 right-2 bg-stone-900/60 px-2 py-0.5 rounded text-[10px] text-white">Golden Days</div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="font-handwritten text-xl text-stone-800">The timeless elegance of Amma</p>
+                        <p class="text-[11px] text-amber-700 mt-1 uppercase tracking-wider font-semibold">Classic Beauty</p>
+                    </div>
+                </div>
+
+                <!-- Frame 13 -->
+                <div class="bg-white p-4 pb-8 rounded-xl shadow-md border border-stone-200/60 transform rotate-1 hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="openPhotoModal('IMG20210719180322.jpg', 'Building a beautiful family together')">
+                    <div class="overflow-hidden rounded bg-stone-100 aspect-square relative">
+                        <img src="IMG20210719180322.jpg" class="object-cover w-full h-full transition-transform hover:scale-110 duration-700" alt="Vintage photo of parents and kids">
+                        <div class="absolute bottom-2 right-2 bg-stone-900/60 px-2 py-0.5 rounded text-[10px] text-white">Our Roots</div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="font-handwritten text-xl text-stone-800">Building our family together</p>
+                        <p class="text-[11px] text-amber-700 mt-1 uppercase tracking-wider font-semibold">Cherished</p>
+                    </div>
+                </div>
+
+                <!-- Frame 14 -->
+                <div class="bg-white p-4 pb-8 rounded-xl shadow-md border border-stone-200/60 transform -rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="openPhotoModal('IMG20210719180428.jpg', 'Enjoying the outdoors under the bright sky')">
+                    <div class="overflow-hidden rounded bg-stone-100 aspect-square relative">
+                        <img src="IMG20210719180428.jpg" class="object-cover w-full h-full transition-transform hover:scale-110 duration-700" alt="Couple standing outdoors">
+                        <div class="absolute bottom-2 right-2 bg-stone-900/60 px-2 py-0.5 rounded text-[10px] text-white">Sunny Days</div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="font-handwritten text-xl text-stone-800">Smiles under the open sky</p>
+                        <p class="text-[11px] text-amber-700 mt-1 uppercase tracking-wider font-semibold">Adventures</p>
+                    </div>
+                </div>
+
+                <!-- Frame 15 -->
+                <div class="bg-white p-4 pb-8 rounded-xl shadow-md border border-stone-200/60 transform rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="openPhotoModal('IMG20210719180424.jpg', 'Sweet moments on the balcony')">
+                    <div class="overflow-hidden rounded bg-stone-100 aspect-square relative">
+                        <img src="IMG20210719180424.jpg" class="object-cover w-full h-full transition-transform hover:scale-110 duration-700" alt="Woman and child on balcony">
+                        <div class="absolute bottom-2 right-2 bg-stone-900/60 px-2 py-0.5 rounded text-[10px] text-white">Home Sweet Home</div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="font-handwritten text-xl text-stone-800">Sweet moments at home</p>
+                        <p class="text-[11px] text-amber-700 mt-1 uppercase tracking-wider font-semibold">Peaceful</p>
+                    </div>
+                </div>
+
+                <!-- Frame 16 -->
+                <div class="bg-white p-4 pb-8 rounded-xl shadow-md border border-stone-200/60 transform -rotate-1 hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="openPhotoModal('IMG20210719180359.jpg', 'A match made in heaven - The Wedding Day')">
+                    <div class="overflow-hidden rounded bg-stone-100 aspect-square relative">
+                        <img src="IMG20210719180359.jpg" class="object-cover w-full h-full transition-transform hover:scale-110 duration-700" alt="Vintage black and white wedding photo">
+                        <div class="absolute bottom-2 right-2 bg-stone-900/60 px-2 py-0.5 rounded text-[10px] text-white">Wedding Day</div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="font-handwritten text-xl text-stone-800">A match made in heaven</p>
+                        <p class="text-[11px] text-amber-700 mt-1 uppercase tracking-wider font-semibold">Forever</p>
+                    </div>
+                </div>
+
+                <!-- Frame 17 -->
+                <div class="bg-white p-4 pb-8 rounded-xl shadow-md border border-stone-200/60 transform rotate-1 hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="openPhotoModal('IMG20210719180339.jpg', 'Smiles that light up the decades')">
+                    <div class="overflow-hidden rounded bg-stone-100 aspect-square relative">
+                        <img src="IMG20210719180339.jpg" class="object-cover w-full h-full transition-transform hover:scale-110 duration-700" alt="Couple holding wooden structure outdoors">
+                        <div class="absolute bottom-2 right-2 bg-stone-900/60 px-2 py-0.5 rounded text-[10px] text-white">Endless Love</div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="font-handwritten text-xl text-stone-800">Smiles that light up decades</p>
+                        <p class="text-[11px] text-amber-700 mt-1 uppercase tracking-wider font-semibold">Happiness</p>
+                    </div>
+                </div>
+
+                <!-- Frame 18 -->
+                <div class="bg-white p-4 pb-8 rounded-xl shadow-md border border-stone-200/60 transform -rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="openPhotoModal('IMG20210719180329.jpg', 'Together through every chapter of life')">
+                    <div class="overflow-hidden rounded bg-stone-100 aspect-square relative">
+                        <img src="IMG20210719180329.jpg" class="object-cover w-full h-full transition-transform hover:scale-110 duration-700" alt="Couple standing outdoors vintage photo">
+                        <div class="absolute bottom-2 right-2 bg-stone-900/60 px-2 py-0.5 rounded text-[10px] text-white">Partners</div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="font-handwritten text-xl text-stone-800">Together through every chapter</p>
+                        <p class="text-[11px] text-amber-700 mt-1 uppercase tracking-wider font-semibold">Soulmates</p>
+                    </div>
+                </div>
+
+                <!-- Frame 19 -->
+                <div class="bg-white p-4 pb-8 rounded-xl shadow-md border border-stone-200/60 transform rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="openPhotoModal('IMG20210719180350.jpg', 'The special day our family story began')">
+                    <div class="overflow-hidden rounded bg-stone-100 aspect-square relative">
+                        <img src="IMG20210719180350.jpg" class="object-cover w-full h-full transition-transform hover:scale-110 duration-700" alt="Vintage ceremony photo">
+                        <div class="absolute bottom-2 right-2 bg-stone-900/60 px-2 py-0.5 rounded text-[10px] text-white">Ceremony</div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="font-handwritten text-xl text-stone-800">The day our story began</p>
+                        <p class="text-[11px] text-amber-700 mt-1 uppercase tracking-wider font-semibold">Special Day</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- THE GRAND GAME CHALLENGE: AMMA'S CANDY MATCH SAGA -->
+    <section id="game-section" class="py-16 px-4 bg-[#fdf6f0] border-t border-b border-orange-100/60">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-8">
+                <span class="px-3 py-1 rounded-full bg-rose-50 text-rose-600 text-xs font-bold uppercase tracking-widest inline-block mb-3">🎮 Sweet Challenge for Amma</span>
+                <h2 class="text-3xl md:text-4xl font-serif-elegant font-bold text-stone-900">Amma's Candy & Art Match</h2>
+                <p class="text-stone-600 max-w-xl mx-auto text-sm mt-2">
+                    Grandma, let's play a cute match-3 game designed just for you! Win all 3 levels to unlock your final birthday gift.
+                </p>
+            </div>
+
+            <!-- Game Dashboard Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Game Sidebar Stats / Directions -->
+                <div class="lg:col-span-4 bg-white p-6 rounded-3xl border border-orange-100 shadow-sm space-y-6">
+                    <div class="flex items-center justify-between border-b border-stone-100 pb-4">
+                        <div>
+                            <p class="text-xs text-stone-400 uppercase tracking-wider font-bold">Current Level</p>
+                            <p class="text-xl font-serif-elegant font-bold text-amber-900" id="current-level-display">Level 1: Watercolor Palette</p>
+                        </div>
+                        <span class="w-10 h-10 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-lg" id="level-badge">1</span>
+                    </div>
+
+                    <!-- Target Goals & Progress -->
+                    <div class="space-y-3">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-stone-500 font-medium">Points Goal:</span>
+                            <span class="font-bold text-stone-800" id="points-goal-display">500</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-stone-500 font-medium">Your Score:</span>
+                            <span class="font-bold text-rose-600 text-lg" id="game-score">0</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-stone-500 font-medium">Moves Left:</span>
+                            <span class="font-bold text-emerald-600 text-lg" id="game-moves">20</span>
+                        </div>
+
+                        <!-- Level Progress Bar -->
+                        <div class="w-full bg-stone-100 h-3 rounded-full overflow-hidden mt-2">
+                            <div id="game-progress" class="bg-rose-400 h-full transition-all duration-300" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Game Instructions & Elements Legend -->
+                    <div class="bg-orange-50/50 p-4 rounded-2xl text-xs space-y-2">
+                        <p class="font-bold text-amber-900">How to Play:</p>
+                        <p class="text-stone-600">Click or tap two adjacent icons to swap them. Match 3 or more in a row or column to clear them and score big!</p>
+                        
+                        <!-- Mini Legend -->
+                        <div class="grid grid-cols-2 gap-2 pt-2 border-t border-orange-100">
+                            <div class="flex items-center gap-1.5 text-stone-600">
+                                <span class="text-base">🎨</span> <span>Palette</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 text-stone-600">
+                                <span class="text-base">🌸</span> <span>Flower</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 text-stone-600">
+                                <span class="text-base">🖌️</span> <span>Brush</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 text-stone-600">
+                                <span class="text-base">🍭</span> <span>Candy</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Control Buttons -->
+                    <div class="pt-2">
+                        <button onclick="resetGame()" class="w-full py-2.5 rounded-xl border border-stone-200 text-stone-600 hover:bg-stone-50 text-sm font-semibold transition active:scale-95 flex items-center justify-center gap-2">
+                            <i data-lucide="rotate-ccw" class="w-4 h-4"></i> Reset Current Level
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Match 3 Grid Container -->
+                <div class="lg:col-span-8 flex flex-col items-center justify-center">
+                    <div class="bg-gradient-to-tr from-amber-50 to-orange-100 p-4 md:p-6 rounded-[2.5rem] shadow-md border-2 border-amber-200 w-full max-w-[450px]">
+                        <!-- Interactive Board -->
+                        <div id="candy-grid" class="grid grid-cols-6 gap-2 bg-white p-3 rounded-2xl shadow-inner min-h-[350px] transition-all duration-300">
+                            <!-- JS Will Dynamically Generate grid items here -->
+                        </div>
+                    </div>
+
+                    <!-- Level Overlays (Success / Next Level) -->
+                    <div id="level-win-modal" class="hidden mt-4 p-4 bg-emerald-50 border border-emerald-200 rounded-2xl w-full max-w-[450px] text-center animate-fade-in">
+                        <h4 class="text-lg font-bold text-emerald-900 flex items-center justify-center gap-1.5">
+                            🎉 Level Completed!
+                        </h4>
+                        <p class="text-xs text-stone-600 mt-1" id="win-message-text">Amazing swapping, Amma! Ready for the next one?</p>
+                        <button onclick="nextLevel()" class="mt-3 px-6 py-2 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-sm transition active:scale-95">
+                            Advance to Next Level
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- DYNAMIC SURPRISE UNLOCKING / ENDING SECTION -->
+    <section id="surprise-section" class="py-20 px-4 bg-gradient-to-b from-[#fdf6f0] via-[#f7e8da] to-[#f5dac3] text-center relative overflow-hidden">
+        
+        <!-- Beautiful Watercolor Backdrops -->
+        <div class="absolute -top-32 left-1/4 w-96 h-96 bg-amber-200/40 rounded-full filter blur-3xl"></div>
+        <div class="absolute -bottom-32 right-1/4 w-96 h-96 bg-rose-200/40 rounded-full filter blur-3xl"></div>
+
+        <!-- Locked State Panel -->
+        <div id="surprise-locked" class="max-w-2xl mx-auto bg-white/70 backdrop-blur-md p-10 rounded-[3rem] border border-orange-200/60 shadow-lg relative z-10">
+            <span class="p-4 rounded-full bg-rose-50 text-rose-500 inline-block mb-4 animate-bounce">
+                <i data-lucide="gift" class="w-10 h-10"></i>
+            </span>
+            <h3 class="text-2xl md:text-3xl font-serif-elegant font-bold text-stone-900">Your Birthday Present is Waiting!</h3>
+            <p class="text-stone-600 max-w-md mx-auto text-sm mt-2">
+                Amma, complete all 3 levels of your custom Candy Match Saga game to open this magical box.
+            </p>
+            
+            <!-- Lock progress tracker -->
+            <div class="mt-6 inline-flex items-center gap-3 bg-amber-50 px-5 py-2.5 rounded-full border border-amber-100 text-amber-900 font-bold text-sm">
+                <i data-lucide="lock" class="w-4 h-4 text-amber-700"></i>
+                <span>Cleared: <span id="cleared-levels-count">0</span> / 3 levels</span>
+            </div>
+
+            <!-- Play shortcut button -->
+            <div class="mt-6">
+                <a href="#game-section" class="px-6 py-2.5 rounded-full bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm transition shadow-md active:scale-95 inline-block">
+                    Let's Play! 🎨
+                </a>
+            </div>
+        </div>
+
+        <!-- Unlocked State Surprise Ending (HIDDEN BY DEFAULT, REVEALED WHEN GAME WINS) -->
+        <div id="surprise-unlocked" class="hidden max-w-3xl mx-auto z-10 relative">
+            <div class="bg-white p-8 md:p-12 rounded-[3.5rem] shadow-2xl border-2 border-amber-300 relative overflow-hidden animate-fade-in">
+                <!-- Sparkle Confetti effects inside -->
+                <div class="absolute -top-10 -left-10 w-24 h-24 bg-rose-200 rounded-full filter blur-xl"></div>
+                <div class="absolute -bottom-10 -right-10 w-24 h-24 bg-yellow-200 rounded-full filter blur-xl"></div>
+
+                <!-- Grand Title -->
+                <span class="text-xs uppercase tracking-widest text-amber-800 font-black">🎁 Present unlocked!</span>
+                <h3 class="text-4xl md:text-5xl font-serif-elegant font-black text-rose-700 mt-2">Happy Birthday Indra Amma!</h3>
+                
+                <!-- Gift Box visual representation -->
+                <div class="my-8 relative w-48 h-48 mx-auto flex items-center justify-center cursor-pointer group" onclick="popFinalSurprise()">
+                    <div id="gift-box-main" class="w-40 h-40 bg-gradient-to-tr from-amber-400 to-yellow-300 rounded-2xl shadow-xl flex items-center justify-center transform transition duration-500 group-hover:scale-110 relative border-b-8 border-amber-500">
+                        <!-- Ribbon representation -->
+                        <div class="absolute inset-y-0 w-8 bg-rose-500"></div>
+                        <div class="absolute inset-x-0 h-8 bg-rose-500"></div>
+                        <!-- Ribbon Bow -->
+                        <div class="absolute -top-4 w-12 h-12 bg-rose-500 rounded-full flex items-center justify-center shadow">
+                            <span class="text-white text-[10px]">♥</span>
+                        </div>
+                        <span class="text-white font-bold text-xs uppercase z-10 tracking-widest">TAP ME!</span>
+                    </div>
+                </div>
+
+                <!-- Reveal Messages Container -->
+                <div id="final-gift-message" class="hidden space-y-6 text-stone-800 transition-opacity duration-1000">
+                    <div class="p-6 bg-amber-50/50 rounded-2xl border border-amber-200 max-w-xl mx-auto">
+                        <h4 class="font-handwritten text-3xl text-rose-700 font-bold mb-2">🎉 Surprise Golden Gift Ticket</h4>
+                        <p class="text-sm font-serif-elegant leading-relaxed">
+                            Since you are an absolute art enthusiast, we have organized a special family trip to the upcoming interactive Art Exhibition, followed by a cozy dinner with your favorite desserts!
+                        </p>
+                        <p class="text-[11px] text-stone-500 mt-3 italic">Valid indefinitely because our love for you never expires.</p>
+                    </div>
+
+                    <!-- Family Wishes Carousel or block -->
+                    <div class="mt-8">
+                        <p class="text-xs font-semibold tracking-wider text-stone-400 uppercase">Every hand in the family painted a message for you:</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                            <div class="bg-rose-50/40 p-4 rounded-xl text-left border border-rose-100/60">
+                                <span class="text-stone-500 text-xs">🎨 Art Room Crew:</span>
+                                <p class="text-sm italic font-serif-elegant mt-1">"To the grandma who never runs out of creative ideas! Have the brightest birthday, Amma!"</p>
+                            </div>
+                            <div class="bg-amber-50/40 p-4 rounded-xl text-left border border-amber-100/60">
+                                <span class="text-stone-500 text-xs">☕ Evening Tea Club:</span>
+                                <p class="text-sm italic font-serif-elegant mt-1">"We look forward to many more beautiful canvas painting sessions next to your sweet tea!"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PHOTO MODAL VIEWER -->
+    <div id="photo-modal" class="fixed inset-0 bg-stone-900/90 z-50 hidden flex items-center justify-center p-4" onclick="closePhotoModal()">
+        <div class="bg-white rounded-2xl max-w-3xl w-full p-4 md:p-6 overflow-hidden relative" onclick="event.stopPropagation()">
+            <button onclick="closePhotoModal()" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-stone-100 flex items-center justify-center text-stone-600 hover:bg-stone-200 transition">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="rounded-xl overflow-hidden bg-stone-100 max-h-[60vh]">
+                <img id="modal-img" src="" class="object-contain w-full h-full mx-auto" alt="Full screen preview">
+            </div>
+            <div class="mt-4 text-center">
+                <p id="modal-caption" class="font-serif-elegant text-stone-800 text-lg font-bold"></p>
+                <p class="text-xs text-amber-700 font-handwritten text-xl mt-1">Handcrafted memories for Indra Amma</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- SURPRISE WIN BANNER ALERT MODAL -->
+    <div id="game-win-popup" class="fixed inset-0 bg-stone-950/80 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-8 text-center border-4 border-amber-300 relative animate-scale-up">
+            <span class="text-5xl">🏆</span>
+            <h3 class="text-2xl font-serif-elegant font-bold text-amber-950 mt-4">Champion Swapper!</h3>
+            <p class="text-stone-600 text-sm mt-2">
+                Grandma, you cleared all three levels beautifully! The final birthday box is now officially unlocked.
+            </p>
+            <div class="mt-6 flex flex-col gap-2">
+                <button onclick="closeWinPopupAndGoToSurprise()" class="px-6 py-3 rounded-full bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm shadow-md transition active:scale-95 w-full">
+                    Open My Birthday Present! 🎁
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- COZY NATURAL FOOTER -->
+    <footer class="bg-stone-900 text-stone-400 py-12 px-4 text-center border-t border-stone-800">
+        <div class="max-w-xl mx-auto space-y-4">
+            <p class="font-handwritten text-3xl text-amber-200 font-bold">"Made with water-colors, love, and sweet code"</p>
+            <p class="text-xs text-stone-500">
+                Designed with a heart full of respect, colors inspired by nature, and levels made specifically for Amma.
+            </p>
+            <p class="text-[10px] text-stone-600 uppercase tracking-widest mt-6">
+                © July 19, 1963 - July 19, 2026 Indra Amma's Creative Corner
+            </p>
+        </div>
+    </footer>
+
+
+    <!-- IN-PAGE JAVASCRIPT LOGIC -->
+    <script>
+        // Init Lucide Icons
+        lucide.createIcons();
+
+        // Background Music Control
+        const audio = document.getElementById('bg-audio');
+        const musicBtn = document.getElementById('music-btn');
+        const musicIndicator = document.getElementById('music-indicator');
+
+        // Play audio immediately with interaction due to browser autoplay policies
+        window.addEventListener('click', () => {
+            if (audio.paused) {
+                // Audio will start gently
+                audio.volume = 0.5;
+                audio.play().then(() => {
+                    const icon = musicBtn.querySelector('svg') || musicBtn.querySelector('i');
+                    if (icon) icon.classList.add('animate-spin-slow');
+                    musicIndicator.classList.remove('hidden');
+                }).catch(e => console.log("Waiting for gesture to play"));
+            }
+        }, { once: true });
+
+        function toggleMusic() {
+            const icon = musicBtn.querySelector('svg') || musicBtn.querySelector('i');
+            if (audio.paused) {
+                audio.play();
+                if (icon) icon.classList.add('animate-spin-slow');
+                musicIndicator.classList.remove('hidden');
+            } else {
+                audio.pause();
+                if (icon) icon.classList.remove('animate-spin-slow');
+                musicIndicator.classList.add('hidden');
+            }
+        }
+
+        // Camera Scene Flash Trigger
+        function triggerFlash() {
+            const overlay = document.getElementById('flash-overlay');
+            overlay.classList.remove('opacity-0');
+            overlay.classList.add('opacity-100');
+            
+            // Camera Sound Simulation using synthetic Beeps if audio Context is allowed
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = ctx.createOscillator();
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(800, ctx.currentTime);
+                osc.connect(ctx.destination);
+                osc.start();
+                osc.stop(ctx.currentTime + 0.15);
+            } catch (e) {}
+
+            setTimeout(() => {
+                overlay.classList.remove('opacity-100');
+                overlay.classList.add('opacity-0');
+                // Drop sparkles
+                createConfetti();
+            }, 800);
+        }
+
+        // Beautiful floating ambient hearts & sparkles
+        function createAmbientSparkles() {
+            const container = document.getElementById('floating-container');
+            const items = ['🌸', '🎨', '🖌️', '❤️', '🎂', '✨'];
+            
+            setInterval(() => {
+                const bubble = document.createElement('div');
+                bubble.className = 'floating-element text-xl md:text-2xl';
+                bubble.innerText = items[Math.floor(Math.random() * items.length)];
+                bubble.style.left = Math.random() * 100 + 'vw';
+                bubble.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                container.appendChild(bubble);
+
+                // Auto-cleanup after animation ends
+                setTimeout(() => {
+                    bubble.remove();
+                }, 8000);
+            }, 1200);
+        }
+        createAmbientSparkles();
+
+        // Confetti Burst Helper
+        function createConfetti() {
+            const container = document.getElementById('floating-container');
+            const items = ['🎨', '✨', '💖', '🎂', '🌸', '🍭'];
+            for(let i=0; i<30; i++) {
+                const item = document.createElement('div');
+                item.className = 'floating-element text-lg md:text-2xl';
+                item.innerText = items[Math.floor(Math.random() * items.length)];
+                item.style.left = (Math.random() * 80 + 10) + 'vw';
+                item.style.bottom = '10vh';
+                item.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                container.appendChild(item);
+                setTimeout(() => item.remove(), 4000);
+            }
+        }
+
+        // Photo Gallery Modal functions
+        function openPhotoModal(src, caption) {
+            const modal = document.getElementById('photo-modal');
+            const modalImg = document.getElementById('modal-img');
+            const modalCaption = document.getElementById('modal-caption');
+            
+            modalImg.src = src;
+            modalCaption.innerText = caption;
+            modal.classList.remove('hidden');
+        }
+
+        function closePhotoModal() {
+            const modal = document.getElementById('photo-modal');
+            modal.classList.add('hidden');
+        }
+
+
+        /* ========================================================
+           AMMA'S MATCH 3 SAGA (CANDY CRUSH GAMEPLAY) IMPLEMENTATION
+           ======================================================== */
+        const gameItems = [
+            { icon: '🎨', name: 'Palette', score: 10 },
+            { icon: '🌸', name: 'Flower', score: 10 },
+            { icon: '🖌️', name: 'Brush', score: 15 },
+            { icon: '🍭', name: 'Candy', score: 15 },
+            { icon: '✨', name: 'Sparkle', score: 20 },
+            { icon: '🏺', name: 'Clay Pot', score: 20 }
+        ];
+
+        // Game State Variables
+        let currentLevel = 1;
+        let pointsGoal = 500;
+        let score = 0;
+        let moves = 20;
+        let selectedCell = null;
+        let board = [];
+        const width = 6;
+        let isLevelCompleted = false;
+
+        const levelData = {
+            1: { goal: 400, moves: 20, title: 'Level 1: Watercolor Palette' },
+            2: { goal: 600, moves: 18, title: 'Level 2: Creative Brushes' },
+            3: { goal: 800, moves: 15, title: 'Level 3: Masterpiece Canvas' }
+        };
+
+        const gridElement = document.getElementById('candy-grid');
+
+        // Sound effect helper
+        function playTick() {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = ctx.createOscillator();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(600, ctx.currentTime);
+                osc.connect(ctx.destination);
+                osc.start();
+                osc.stop(ctx.currentTime + 0.05);
+            } catch (e) {}
+        }
+
+        function playSuccess() {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = ctx.createOscillator();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(440, ctx.currentTime);
+                const gainNode = ctx.createGain();
+                osc.connect(gainNode);
+                gainNode.connect(ctx.destination);
+                osc.start();
+                osc.frequency.exponentialRampToValueAtTime(880, ctx.currentTime + 0.3);
+                osc.stop(ctx.currentTime + 0.3);
+            } catch (e) {}
+        }
+
+        // Initialize Level parameters
+        function initLevel() {
+            const data = levelData[currentLevel];
+            pointsGoal = data.goal;
+            moves = data.moves;
+            score = 0;
+            isLevelCompleted = false;
+
+            document.getElementById('current-level-display').innerText = data.title;
+            document.getElementById('level-badge').innerText = currentLevel;
+            document.getElementById('points-goal-display').innerText = pointsGoal;
+            document.getElementById('game-score').innerText = score;
+            document.getElementById('game-moves').innerText = moves;
+            document.getElementById('game-progress').style.width = '0%';
+            document.getElementById('level-win-modal').classList.add('hidden');
+
+            createBoard();
+        }
+
+        // Create standard randomized board
+        function createBoard() {
+            board = [];
+            gridElement.innerHTML = '';
+            for (let i = 0; i < width * width; i++) {
+                // Ensure no matches are pre-created
+                let randomChoice;
+                let avoids = [];
+                if (i >= 2) {
+                    if (board[i-1] === board[i-2]) avoids.push(board[i-1]);
+                }
+                if (i >= width * 2) {
+                    if (board[i-width] === board[i-width*2]) avoids.push(board[i-width]);
+                }
+
+                const filteredPool = gameItems.filter(item => !avoids.includes(item.icon));
+                const chosenItem = filteredPool.length > 0 
+                    ? filteredPool[Math.floor(Math.random() * filteredPool.length)] 
+                    : gameItems[Math.floor(Math.random() * gameItems.length)];
+
+                board.push(chosenItem.icon);
+
+                // Create board cell element
+                const cell = document.createElement('button');
+                cell.setAttribute('id', i);
+                cell.className = "w-12 h-12 md:w-14 md:h-14 bg-stone-50 hover:bg-orange-50 active:scale-95 flex items-center justify-center text-2xl md:text-3xl rounded-xl border border-orange-100/60 shadow-sm transition-all focus:outline-none";
+                cell.innerText = chosenItem.icon;
+                cell.addEventListener('click', () => handleCellClick(i));
+                gridElement.appendChild(cell);
+            }
+        }
+
+        // Handle cell click & Swapping
+        function handleCellClick(index) {
+            if (isLevelCompleted || moves <= 0) return;
+
+            const clickedCellElement = document.getElementById(index);
+            playTick();
+
+            if (selectedCell === null) {
+                // First Selection
+                selectedCell = index;
+                clickedCellElement.classList.add('bg-amber-200', 'border-amber-400', 'scale-105');
+            } else {
+                // Second selection, check adjacency
+                const firstIndex = selectedCell;
+                const secondIndex = index;
+                
+                const isAdjacent = checkAdjacency(firstIndex, secondIndex);
+
+                if (isAdjacent) {
+                    swapCells(firstIndex, secondIndex);
+                    // Clear visual selection
+                    document.getElementById(firstIndex).classList.remove('bg-amber-200', 'border-amber-400', 'scale-105');
+                    selectedCell = null;
+
+                    // Evaluate matches on whole board
+                    setTimeout(() => {
+                        const hasMatches = checkAndMatch();
+                        if (!hasMatches) {
+                            // Swap back if no match was made
+                            swapCells(firstIndex, secondIndex);
+                        } else {
+                            // Valid swap made, use one move
+                            moves--;
+                            document.getElementById('game-moves').innerText = moves;
+                            checkGameConditions();
+                        }
+                    }, 200);
+
+                } else {
+                    // Not adjacent, switch selection to new cell
+                    document.getElementById(firstIndex).classList.remove('bg-amber-200', 'border-amber-400', 'scale-105');
+                    selectedCell = secondIndex;
+                    clickedCellElement.classList.add('bg-amber-200', 'border-amber-400', 'scale-105');
+                }
+            }
+        }
+
+        function checkAdjacency(idx1, idx2) {
+            const row1 = Math.floor(idx1 / width);
+            const col1 = idx1 % width;
+            const row2 = Math.floor(idx2 / width);
+            const col2 = idx2 % width;
+
+            const isNeighbor = (Math.abs(row1 - row2) === 1 && col1 === col2) || 
+                              (Math.abs(col1 - col2) === 1 && row1 === row2);
+            return isNeighbor;
+        }
+
+        function swapCells(idx1, idx2) {
+            const temp = board[idx1];
+            board[idx1] = board[idx2];
+            board[idx2] = temp;
+
+            document.getElementById(idx1).innerText = board[idx1];
+            document.getElementById(idx2).innerText = board[idx2];
+        }
+
+        // Match-3 Core logic (Row & Column verification)
+        function checkAndMatch() {
+            let matchedIndices = new Set();
+
+            // Check Row matches
+            for (let r = 0; r < width; r++) {
+                for (let c = 0; c < width - 2; c++) {
+                    const idx1 = r * width + c;
+                    const idx2 = idx1 + 1;
+                    const idx3 = idx1 + 2;
+                    if (board[idx1] && board[idx1] === board[idx2] && board[idx1] === board[idx3]) {
+                        matchedIndices.add(idx1);
+                        matchedIndices.add(idx2);
+                        matchedIndices.add(idx3);
+                    }
+                }
+            }
+
+            // Check Column matches
+            for (let c = 0; c < width; c++) {
+                for (let r = 0; r < width - 2; r++) {
+                    const idx1 = r * width + c;
+                    const idx2 = idx1 + width;
+                    const idx3 = idx1 + (width * 2);
+                    if (board[idx1] && board[idx1] === board[idx2] && board[idx1] === board[idx3]) {
+                        matchedIndices.add(idx1);
+                        matchedIndices.add(idx2);
+                        matchedIndices.add(idx3);
+                    }
+                }
+            }
+
+            if (matchedIndices.size > 0) {
+                // Award points
+                const gainedScore = matchedIndices.size * 25;
+                score += gainedScore;
+                document.getElementById('game-score').innerText = score;
+                
+                // Update Progress bar
+                const percentage = Math.min((score / pointsGoal) * 100, 100);
+                document.getElementById('game-progress').style.width = percentage + '%';
+
+                // Play pleasant bubble chime
+                playSuccess();
+
+                // Explode Animation effect
+                matchedIndices.forEach(idx => {
+                    const cell = document.getElementById(idx);
+                    cell.classList.add('bg-rose-100', 'scale-75', 'rotate-12');
+                });
+
+                // Clean cells & drop new ones
+                setTimeout(() => {
+                    matchedIndices.forEach(idx => {
+                        board[idx] = '';
+                        document.getElementById(idx).innerText = '';
+                        document.getElementById(idx).classList.remove('bg-rose-100', 'scale-75', 'rotate-12');
+                    });
+                    fillBoardGaps();
+                }, 300);
+
+                return true;
+            }
+
+            return false;
+        }
+
+        // Fill empty spots with falling items
+        function fillBoardGaps() {
+            // Drop down columns
+            for (let col = 0; col < width; col++) {
+                // Check column from bottom to top
+                for (let r = width - 1; r >= 0; r--) {
+                    const idx = r * width + col;
+                    if (board[idx] === '') {
+                        // Find first occupied cell above it
+                        let foundIdx = -1;
+                        for (let checkRow = r - 1; checkRow >= 0; checkRow--) {
+                            const upperIdx = checkRow * width + col;
+                            if (board[upperIdx] !== '') {
+                                foundIdx = upperIdx;
+                                break;
+                            }
+                        }
+
+                        if (foundIdx !== -1) {
+                            // Shift cell down
+                            board[idx] = board[foundIdx];
+                            board[foundIdx] = '';
+                            document.getElementById(idx).innerText = board[idx];
+                            document.getElementById(foundIdx).innerText = '';
+                        } else {
+                            // If none found above, spawn a new random element
+                            const newItem = gameItems[Math.floor(Math.random() * gameItems.length)];
+                            board[idx] = newItem.icon;
+                            document.getElementById(idx).innerText = newItem.icon;
+                        }
+                    }
+                }
+            }
+
+            // Check if falling items created new matches recursively
+            setTimeout(() => {
+                checkAndMatch();
+            }, 300);
+        }
+
+        // Game Win / Loss evaluation
+        function checkGameConditions() {
+            if (score >= pointsGoal) {
+                // Level Cleared
+                isLevelCompleted = true;
+                playSuccess();
+                createConfetti();
+
+                document.getElementById('level-win-modal').classList.remove('hidden');
+                
+                if (currentLevel === 3) {
+                    // Final game completed! Reveal the box!
+                    setTimeout(() => {
+                        document.getElementById('game-win-popup').classList.remove('hidden');
+                    }, 800);
+                } else {
+                    document.getElementById('win-message-text').innerText = `Amazing swapping, Amma! You reached the score of ${score}. Tap below to advance!`;
+                }
+            } else if (moves <= 0) {
+                // No moves left
+                alertModal("No moves left, Amma! Don't worry, let's try this level again.");
+                resetGame();
+            }
+        }
+
+        // Simple customized modal alert replacement (no browser block)
+        function alertModal(message) {
+            const popup = document.createElement('div');
+            popup.className = "fixed inset-0 bg-stone-900/80 z-50 flex items-center justify-center p-4";
+            popup.innerHTML = `
+                <div class="bg-white rounded-2xl max-w-sm w-full p-6 text-center border-2 border-orange-200">
+                    <p class="text-stone-800 font-serif-elegant font-bold text-lg">${message}</p>
+                    <button onclick="this.parentElement.parentElement.remove()" class="mt-4 px-6 py-2 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-full text-sm">
+                        Okay, Let's go!
+                    </button>
+                </div>
+            `;
+            document.body.appendChild(popup);
+        }
+
+        // Reset game
+        function resetGame() {
+            initLevel();
+        }
+
+        function nextLevel() {
+            if (currentLevel < 3) {
+                currentLevel++;
+                document.getElementById('cleared-levels-count').innerText = currentLevel - 1;
+                initLevel();
+            }
+        }
+
+        function closeWinPopupAndGoToSurprise() {
+            document.getElementById('game-win-popup').classList.add('hidden');
+            document.getElementById('cleared-levels-count').innerText = 3;
+            
+            // Swap locked state to unlocked state in the surprise section
+            document.getElementById('surprise-locked').classList.add('hidden');
+            const unlocked = document.getElementById('surprise-unlocked');
+            unlocked.classList.remove('hidden');
+            
+            // Scroll smoothly to surprise section
+            document.getElementById('surprise-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Final surprise pop
+        function popFinalSurprise() {
+            // Bounce and expand gift box
+            const box = document.getElementById('gift-box-main');
+            box.classList.add('scale-150', 'opacity-0');
+            
+            setTimeout(() => {
+                box.classList.add('hidden');
+                document.getElementById('final-gift-message').classList.remove('hidden');
+                createConfetti();
+            }, 500);
+        }
+
+        // Start Board Game
+        initLevel();
+    </script>
+</body>
+</html>
